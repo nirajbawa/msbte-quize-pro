@@ -1,7 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import QuestionModel, { mcqQuestion } from "@/models/Question";
 import { NextRequest } from "next/server";
-import { it } from "node:test";
 
 export async function POST(
   req: NextRequest,
@@ -10,7 +9,7 @@ export async function POST(
   await dbConnect();
   try {
     const testId = params.id;
-    const { answers } = await req.json();
+    const { answers, timeToSolve } = await req.json();
 
     const testQuestions = await QuestionModel.findOne(
       { testId: testId },
@@ -63,7 +62,7 @@ export async function POST(
         {
           success: true,
           message: "Test submitted successfully.",
-          data: solvedQuestions,
+          data: { solvedQuestions: solvedQuestions, timeToSolve: timeToSolve },
         },
         { status: 200 }
       );

@@ -62,7 +62,7 @@ export async function middleware(req: NextRequest) {
     if (token && token.role === "Admin" && token.isVerified) {
       return NextResponse.next();
     } else {
-      return NextResponse.redirect(new URL("/sign-in", req.url));
+      return NextResponse.redirect(new URL("/admin/sign-in", req.url));
     }
   } else if (adminApiProtectedRoutes.test(pathname)) {
     if (token && token.role === "Admin" && token.isVerified) {

@@ -1,7 +1,7 @@
 "use client";
 import create from "zustand";
 import { getQuestion } from "@/api-requests/TestQuestionsRequest";
-import mcqQuestions from "@/schemas/mcqQuestions";
+import { submitQuestions } from "@/api-requests/TestQuestionsRequest";
 
 interface mcqQuestion {
   question: string;
@@ -25,6 +25,8 @@ const useMcqStore = create((set: any, get: any) => ({
   attempted: 0,
   attemptedAndReview: 0,
   notAttemptedAndReview: 0,
+  submittedQuestions: [],
+  timeToSolve: {},
   setIndex: (index: number) => {
     if (index < get().mcqQuestions.length && index >= 0) {
       set({ index: index });
@@ -127,6 +129,24 @@ const useMcqStore = create((set: any, get: any) => ({
       });
       set({ mcqAnswers: temp });
     } catch {}
+  },
+  submit: async (id: string, timeToSolve: string) => {
+    const data = await get().mcqAnswers;
+    const res = await submitQuestions(id, {
+      answers: data,
+      timeToSolve: timeToSolve,
+    });
+    set({ submittedQuestions: res.data.solvedQuestions });
+    set({
+      timeToSolve: {
+        h: res.data.timeToSolve.h,
+        m: res.data.timeToSolve.m,
+        s: res.data.timeToSolve.s,
+      },
+    });
+  },
+  makeSubmitEmpty: () => {
+    set({ submittedQuestions: [] });
   },
 }));
 

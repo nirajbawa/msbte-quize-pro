@@ -1,14 +1,16 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { getUserTest } from "@/api-requests/TestRequests";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
+import { Loader2 } from "lucide-react";
 
 function TestDetails() {
   const searchParams = useSearchParams();
+  const [loader, setLoader] = useState<boolean>(false);
 
   const { isPending, isError, data } = useQuery({
     queryKey: ["testInfo"],
@@ -33,9 +35,15 @@ function TestDetails() {
             "id"
           )}`}
         >
-          <Button variant="default">
+          <Button
+            className="flex justify-center items-center"
+            variant="default"
+            onClick={() => setLoader(!loader)}
+          >
             {isPending || isError ? (
               <Skeleton className="h-4 w-[50px]" />
+            ) : loader ? (
+              <Loader2 className="h-4 w-4 mx-6  animate-spin" />
             ) : (
               "Start Test"
             )}

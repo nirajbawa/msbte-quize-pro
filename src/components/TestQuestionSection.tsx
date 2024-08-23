@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import mcqQuestions from "@/schemas/mcqQuestions";
+import { Loader2 } from "lucide-react";
 
 interface QuestionsProp {
   index: number;
@@ -42,6 +42,7 @@ function TestQuestionSection({
   const inputDiv2 = useRef<HTMLInputElement>(null);
   const inputDiv3 = useRef<HTMLInputElement>(null);
   const inputDiv4 = useRef<HTMLInputElement>(null);
+  const [loader, setLoader] = useState<boolean>(false);
 
   const saveAnswer = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     setAnswer(index, e.currentTarget.innerText);
@@ -126,8 +127,18 @@ function TestQuestionSection({
             To be Reviewed Later
           </div>
           {index === totalMcqQuestions - 1 ? (
-            <Button variant="destructive" onClick={submit}>
-              End Exam
+            <Button
+              variant="destructive"
+              onClick={() => {
+                submit();
+                setLoader(!loader);
+              }}
+            >
+              {loader ? (
+                <Loader2 className="h-4 mx-6 w-4 animate-spin" />
+              ) : (
+                " End Exam"
+              )}
             </Button>
           ) : (
             ""

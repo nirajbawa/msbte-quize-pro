@@ -21,7 +21,6 @@ import {
 import { User as Use, Store } from "lucide-react";
 import { useRouter } from "next/navigation";
 import useLayoutStore from "@/store/useLayoutStore";
-import { Expand } from 'lucide-react';
 
 
 const Navbar = () => {
@@ -187,7 +186,7 @@ const Navbar = () => {
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={() => router.push("/dashboard")}>
                   <Use className="mr-2 h-4 w-4" />
                   <span>Profile</span>
                 </DropdownMenuItem>
@@ -208,8 +207,11 @@ const Navbar = () => {
           onClick={menuOff}
         >
           <li className="w-full">
-            <Button variant="outline" size={menu ? "fullSize" : "default"}>
-              Sign In
+            <Button
+              variant="outline"
+              size={menu ? "fullSize" : "default"}
+            >
+                Sign In
             </Button>
           </li>
         </Link>

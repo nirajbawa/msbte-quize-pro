@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -21,6 +21,7 @@ import useCartStore from "@/store/useCartStore";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@radix-ui/react-toast";
 import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 
 interface TestCardProps {
   title: string;
@@ -34,6 +35,7 @@ interface TestCardProps {
 const MyTestCard = ({ title, img, btnUrl, price, date, id }: TestCardProps) => {
   const { toast } = useToast();
   const router = useRouter();
+  const [loader, setLoader] = useState<boolean>(false);
 
   const addNewItemToCart = useCartStore((state: any) => state.addNewToCartItem);
   return (
@@ -61,7 +63,17 @@ const MyTestCard = ({ title, img, btnUrl, price, date, id }: TestCardProps) => {
 
           <div className="flex gap-4">
             <Link href={btnUrl}>
-              <Button size="sm">Open</Button>
+              <Button
+                size="sm"
+                className="flex justify-center items-center"
+                onClick={() => setLoader(!loader)}
+              >
+                {loader ? (
+                  <Loader2 className="h-4 mx-3 w-4 animate-spin" />
+                ) : (
+                  "Open"
+                )}
+              </Button>
             </Link>
           </div>
         </CardFooter>

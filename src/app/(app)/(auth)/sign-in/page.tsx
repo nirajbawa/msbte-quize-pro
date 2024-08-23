@@ -154,6 +154,9 @@ const SignInForm = () => {
                 )}
               </Button>
             </div>
+            <div className="w-full text-center text-blue-500">
+              <Link href="/forgot-password">Forgot Password</Link>
+            </div>
           </form>
         </Form>
       </div>

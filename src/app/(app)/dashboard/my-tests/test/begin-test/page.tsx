@@ -13,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getUserTest } from "@/api-requests/TestRequests";
 import { Skeleton } from "@/components/ui/skeleton";
 import { createTimeModel, useTimeModel } from "react-compound-timer";
+import { useRouter } from "next/navigation";
 
 const stopwatch = createTimeModel({
   initialTime: 0,
@@ -27,6 +28,8 @@ function BeginTest() {
     queryKey: ["beginTest"],
     queryFn: async () => await getUserTest(searchParams.get("id")),
   });
+
+  const router = useRouter();
 
   const mcqStore = useMcqStore((state: any) => state.mcqQuestions);
   const loadMcqData = useMcqStore((state: any) => state.loadData);
@@ -43,7 +46,12 @@ function BeginTest() {
     (state: any) => state.notAttemptedAndReview
   );
   const setAttempted = useMcqStore((state: any) => state.setAttempted);
+  const submitQuestions = useMcqStore((state: any) => state.submit);
+  const submittedQuestions = useMcqStore(
+    (state: any) => state.submittedQuestions
+  );
   const setLayout = useLayoutStore((state: any) => state.setLayout);
+
   const [fullScreen, setFullScreen] = useState<boolean>(false);
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -179,9 +187,20 @@ function BeginTest() {
 
   const submit = () => {
     stopwatch.stop();
-    console.log(JSON.stringify(mcqStore));
-    console.log(JSON.stringify(mcqAnswers));
+    submitQuestions(searchParams.get("id"), value);
   };
+
+  useEffect(() => {
+    if (submittedQuestions.length != 0) {
+      router.replace(
+        `/dashboard/my-tests/test/submit?id=${searchParams.get("id")}`
+      );
+      setLayout({
+        isNavBarHidden: false,
+        isFooterHidden: false,
+      });
+    }
+  }, [submittedQuestions]);
 
   useEffect(() => {
     setLayout({

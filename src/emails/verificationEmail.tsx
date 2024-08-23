@@ -29,7 +29,7 @@ export default function VerificationEmail({username, otp} : VerificationEmailPro
           <Row>
             <Text>
               Thank you for registering. Please use the following verification
-              code to complete your registration:
+              code to complete your registration :
             </Text>
           </Row>
           <Row>

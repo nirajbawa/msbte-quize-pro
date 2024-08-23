@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     if (!existingVerifiedEmail) {
       hashedPassword = await bcrypt.hash(password, 10);
       expiryDate = new Date();
-      expiryDate.setHours(expiryDate.getMinutes() + 5);
+      expiryDate.setMinutes(expiryDate.getMinutes() + 3);
 
       const newUser = new UserModel({
         username,
@@ -41,10 +41,17 @@ export async function POST(request: Request) {
       );
     } else {
       expiryDate = new Date();
-      expiryDate.setHours(expiryDate.getMinutes() + 5);
+      expiryDate.setMinutes(expiryDate.getMinutes() + 3);
+      hashedPassword = await bcrypt.hash(password, 10);
+
       await UserModel.updateOne(
         { email },
-        { username, verifyCode, verifyCodeExpiry: expiryDate }
+        {
+          username,
+          verifyCode,
+          password: hashedPassword,
+          verifyCodeExpiry: expiryDate,
+        }
       );
     }
 
