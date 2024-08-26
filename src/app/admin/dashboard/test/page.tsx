@@ -254,7 +254,7 @@ function Tests() {
                     title={item.title}
                     img={item.banner}
                     btnEditUrl={`/admin/dashboard/test/edit?id=${item._id}`}
-                    btnOpenUrl="/"
+                    btnOpenUrl={`/cart/checkout?id=${item._id}`}
                     price={item.price}
                     date={item.updatedAt}
                   />

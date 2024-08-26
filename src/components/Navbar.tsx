@@ -22,7 +22,6 @@ import { User as Use, Store } from "lucide-react";
 import { useRouter } from "next/navigation";
 import useLayoutStore from "@/store/useLayoutStore";
 
-
 const Navbar = () => {
   const layout = useLayoutStore((state: any) => state.layout);
   const [menu, setMenu] = useState<boolean>(false);
@@ -135,19 +134,7 @@ const Navbar = () => {
           </li>
         </Link>
 
-        <Link href="/about" className="w-full" onClick={menuOff}>
-          <li className="w-full">
-            <Button variant="ghost" size={menu ? "fullSize" : "default"}>
-              About
-            </Button>
-          </li>
-        </Link>
-
-        <Link
-          href="/tests"
-          className={`w-full ${token ? "flex" : "hidden"}`}
-          onClick={menuOff}
-        >
+        <Link href="/tests" className={`w-full`} onClick={menuOff}>
           <li className="w-full">
             {" "}
             <Button
@@ -207,11 +194,8 @@ const Navbar = () => {
           onClick={menuOff}
         >
           <li className="w-full">
-            <Button
-              variant="outline"
-              size={menu ? "fullSize" : "default"}
-            >
-                Sign In
+            <Button variant="outline" size={menu ? "fullSize" : "default"}>
+              Sign In
             </Button>
           </li>
         </Link>

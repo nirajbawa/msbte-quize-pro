@@ -6,7 +6,7 @@ const testSchema = z.object({
 });
 
 export const testEditSchema = z.object({
-  title: z.string().min(2).max(30).nonempty(),
+  title: z.string().min(2).max(50).nonempty(),
   price: z.string().min(1).nonempty(),
   publish: z.string().min(1),
 });

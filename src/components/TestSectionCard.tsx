@@ -47,7 +47,9 @@ const TestSectionCard = ({
     <div className="w-72 md:w-80">
       <Card>
         <CardHeader>
-          <CardTitle className={`${title.length > 23 ? "mb-0" : "mb-6"}`}>
+          <CardTitle
+            className={`${title.length > 20 ? "mb-0" : "mb-6"} leading-8`}
+          >
             {title}
           </CardTitle>
         </CardHeader>
@@ -60,7 +62,8 @@ const TestSectionCard = ({
             style={{ objectFit: "cover", width: "100%", height: "12rem" }}
           />
           <div className="pt-7 flex w-full">
-            <span className="font-bold mr-1">Price : </span> {price} ₹
+            <span className="font-bold mr-1">Price : </span>{" "}
+            {parseFloat(price) < 1 ? "free" : price + " ₹"}
           </div>
         </CardContent>
         <CardFooter className="flex justify-between">

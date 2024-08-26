@@ -1,10 +1,10 @@
 import mongoose, { Schema, Document } from "mongoose";
 
 export interface Order extends Document {
-  razorpay_order_id: string;
-  razorpay_payment_id: string;
+  razorpay_order_id?: string;
+  razorpay_payment_id?: string;
   status: string;
-  method: string;
+  method?: string;
   testId: Schema.Types.ObjectId;
   userEmail: string;
   amount: number;
@@ -15,11 +15,11 @@ const OrderSchema: Schema<Order> = new mongoose.Schema(
   {
     razorpay_order_id: {
       type: Schema.Types.String,
-      required: [true, "razorpay order id is required"],
+      required: [false, "razorpay order id is required"],
     },
     razorpay_payment_id: {
       type: Schema.Types.String,
-      required: [true, "razorpay payment id is required"],
+      required: [false, "razorpay payment id is required"],
     },
     status: {
       type: Schema.Types.String,
@@ -27,7 +27,7 @@ const OrderSchema: Schema<Order> = new mongoose.Schema(
     },
     method: {
       type: Schema.Types.String,
-      required: [true, "method is required"],
+      required: [false, "method is required"],
     },
     testId: {
       type: Schema.Types.ObjectId,

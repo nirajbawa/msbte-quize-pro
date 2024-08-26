@@ -73,7 +73,7 @@ const Tests = () => {
                 title={item.title}
                 img={item.banner}
                 price={item.price}
-                btnUrl="/"
+                btnUrl={`/cart/checkout?id=${item._id}`}
               />
             ))
           )}

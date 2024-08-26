@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/tooltip";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PostAddOutlinedIcon from "@mui/icons-material/PostAddOutlined";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import AddBusinessOutlinedIcon from "@mui/icons-material/AddBusinessOutlined";
+import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 
 const DashboardSidebar = () => {
   return (
@@ -64,11 +65,28 @@ const DashboardSidebar = () => {
           <Tooltip>
             <TooltipTrigger>
               <div className="hs-tooltip [--placement:right] inline-block">
-                <Link href="/admin/dashboard">
+                <Link href="/admin/dashboard/orders">
                   <div className="hs-tooltip-toggle w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
-                    <SettingsOutlinedIcon className="text-gray-500 " />
+                    <AddBusinessOutlinedIcon className="text-gray-500 " />
                     <TooltipContent side="right">
-                      <p>Settings</p>
+                      <p>Orders</p>
+                    </TooltipContent>
+                  </div>
+                </Link>
+              </div>
+            </TooltipTrigger>
+          </Tooltip>
+        </TooltipProvider>
+
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <div className="hs-tooltip [--placement:right] inline-block">
+                <Link href="/admin/dashboard/users">
+                  <div className="hs-tooltip-toggle w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
+                    <PeopleOutlineOutlinedIcon className="text-gray-500 " />
+                    <TooltipContent side="right">
+                      <p>Users</p>
                     </TooltipContent>
                   </div>
                 </Link>

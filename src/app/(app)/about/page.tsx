@@ -3,6 +3,11 @@ import AboutSections from "@/components/AboutSections";
 import WelcomeAnimation from "@/assets/lottiefiles/welcome.json";
 import We from "@/assets/lottiefiles/we.json";
 import JoinUs from "@/assets/lottiefiles/join-us.json";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 const About = () => {
   return (

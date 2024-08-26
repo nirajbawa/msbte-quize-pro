@@ -50,7 +50,7 @@ function EditTest() {
     resolver: zodResolver(testEditSchema),
     defaultValues: {
       title: "",
-      price: "",
+      price: 1,
       publish: "",
     },
   });

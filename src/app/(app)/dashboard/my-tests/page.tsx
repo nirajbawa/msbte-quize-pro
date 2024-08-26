@@ -114,7 +114,16 @@ function MyTests() {
           />
         ) : (
           <main className="p-10 flex justify-center gap-10 flex-wrap">
-            {data &&
+            {data && data?.data.length === 0 ? (
+              <Lottiefiles
+                loop={lottieProps.loop}
+                autoplay={lottieProps.autoplay}
+                animationData={lottieProps.animationData}
+                height={lottieProps.height}
+                width={lottieProps.width}
+              />
+            ) : (
+              data &&
               data?.data.length > 0 &&
               data?.data?.map((item: any, index: number) => (
                 <MyTestCard
@@ -126,7 +135,8 @@ function MyTests() {
                   date={item.testId.updatedAt}
                   id={item.testId._id}
                 />
-              ))}
+              ))
+            )}
           </main>
         )}
       </div>

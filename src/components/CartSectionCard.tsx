@@ -59,7 +59,8 @@ const CartSectionCard = ({
             style={{ objectFit: "cover", width: "100%", height: "12rem" }}
           />
           <div className="pt-7 flex w-full">
-            <span className="font-bold mr-1">Price : </span> {price} ₹
+            <span className="font-bold mr-1">Price : </span>{" "}
+            {parseFloat(price) < 1 ? "free" : price + " ₹"}
           </div>
         </CardContent>
         <CardFooter className="flex justify-between">

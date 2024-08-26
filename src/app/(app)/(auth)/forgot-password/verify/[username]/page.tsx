@@ -52,7 +52,7 @@ const VerifyForm = () => {
       console.log("myerror", error);
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
-        title: "Sign Up Failed",
+        title: "Failed",
         description:
           axiosError?.response?.data?.message || "something went wrong",
       });

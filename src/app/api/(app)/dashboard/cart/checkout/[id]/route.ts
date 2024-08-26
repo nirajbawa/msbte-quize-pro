@@ -34,7 +34,7 @@ export async function GET(
       });
 
       const payment_capture = 1;
-      const amount = parseFloat(testData.price)*100;
+      const amount = parseFloat(testData.price) * 100;
       const currency = "INR";
       const options: any = {
         amount: amount.toString(),

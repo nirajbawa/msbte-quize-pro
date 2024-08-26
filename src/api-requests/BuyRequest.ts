@@ -15,3 +15,10 @@ export const verifyOrder = async (data: any): Promise<ApiResponse> => {
   );
   return response.data;
 };
+
+export const freeTest = async (id: any): Promise<ApiResponse> => {
+  const response = await axios.get<ApiResponse>(
+    `/api/dashboard/cart/checkout/free/${id}`
+  );
+  return response.data;
+};
