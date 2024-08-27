@@ -124,6 +124,7 @@ function Checkout() {
         freeTestMutate.mutate(searchParams.get("id") || "");
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   return (

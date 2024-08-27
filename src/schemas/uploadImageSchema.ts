@@ -1,7 +1,8 @@
+"use client";
 import { z } from "zod";
 
 const uploadImageSchema = z.object({
-  image: z.instanceof(FileList),
+  image: z.any(),
 });
 
 export default uploadImageSchema;

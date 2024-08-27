@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import AboutSections from "@/components/AboutSections";
 import PrivacyPolicyAnimation from "@/assets/lottiefiles/privacy-policy.json";

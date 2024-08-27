@@ -23,6 +23,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import ClientOnly from "@/components/ClientOnly";
 
 function Create() {
   const createTestForm = useForm<z.infer<typeof testSchema>>({
@@ -116,97 +117,104 @@ function Create() {
   }
 
   return (
-    <main className="w-full homeLayout pt-28 gap-12 text-gray-800 flex justify-center flex-col items-center pb-28 ">
-      <Form {...createTestForm}>
-        <form
-          onSubmit={createTestForm.handleSubmit(onSubmitCreateTest)}
-          className="space-y-8 w-96"
-        >
-          <FormField
-            control={createTestForm.control}
-            name="title"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Title</FormLabel>
-                <FormControl>
-                  <Input placeholder="Title" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={createTestForm.control}
-            name="price"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Price</FormLabel>
-                <FormControl>
-                  <Input placeholder="price" {...field} type="number" min={0} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </form>
-      </Form>
-      <Form {...UploadImageForm}>
-        <form
-          onSubmit={UploadImageForm.handleSubmit(onSubmitImageUpload)}
-          className="space-y-8 w-96"
-          encType="multipart/form-data"
-        >
-          <div className="flex justify-between items-center gap-5">
+  
+      <main className="w-full homeLayout pt-28 gap-12 text-gray-800 flex justify-center flex-col items-center pb-28 ">
+        <Form {...createTestForm}>
+          <form
+            onSubmit={createTestForm.handleSubmit(onSubmitCreateTest)}
+            className="space-y-8 w-96"
+          >
             <FormField
-              control={UploadImageForm.control}
-              name="image"
+              control={createTestForm.control}
+              name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Upload Banner</FormLabel>
-                  <div className="h-32 flex justify-center items-center cursor-pointer border-gray-100 border-2 rounded-sm">
-                    <FormControl>
-                      <Input
-                        placeholder="Image"
-                        {...fileRef}
-                        type="file"
-                        className="border-none"
-                        accept=".jpeg,.jpg,.png,.svg,.webp"
-                      />
-                    </FormControl>
-                  </div>
+                  <FormLabel>Title</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Title" {...field} />
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit">
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  wait
-                </>
-              ) : (
-                "Upload"
+            <FormField
+              control={createTestForm.control}
+              name="price"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Price</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="price"
+                      {...field}
+                      type="number"
+                      min={0}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
               )}
-            </Button>
-          </div>
-          <div className="flex justify-center">
-            <Button
-              type="button"
-              onClick={createTestForm.handleSubmit(onSubmitCreateTest)}
-            >
-              {isFormSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  wait
-                </>
-              ) : (
-                "Next"
-              )}
-            </Button>
-          </div>
-        </form>
-      </Form>
-    </main>
+            />
+          </form>
+        </Form>
+        <Form {...UploadImageForm}>
+          <form
+            onSubmit={UploadImageForm.handleSubmit(onSubmitImageUpload)}
+            className="space-y-8 w-96"
+            encType="multipart/form-data"
+          >
+            <div className="flex justify-between items-center gap-5">
+              <FormField
+                control={UploadImageForm.control}
+                name="image"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Upload Banner</FormLabel>
+                    <div className="h-32 flex justify-center items-center cursor-pointer border-gray-100 border-2 rounded-sm">
+                      <FormControl>
+                        <Input
+                          placeholder="Image"
+                          {...fileRef}
+                          type="file"
+                          className="border-none"
+                          accept=".jpeg,.jpg,.png,.svg,.webp"
+                        />
+                      </FormControl>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit">
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    wait
+                  </>
+                ) : (
+                  "Upload"
+                )}
+              </Button>
+            </div>
+            <div className="flex justify-center">
+              <Button
+                type="button"
+                onClick={createTestForm.handleSubmit(onSubmitCreateTest)}
+              >
+                {isFormSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    wait
+                  </>
+                ) : (
+                  "Next"
+                )}
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </main>
+  
   );
 }
 

@@ -250,7 +250,7 @@ function Tests() {
               <>
                 {group.data.data.map((item: any, index: number) => (
                   <TestEditCard
-                    key={index}
+                    key={item._id}
                     title={item.title}
                     img={item.banner}
                     btnEditUrl={`/admin/dashboard/test/edit?id=${item._id}`}

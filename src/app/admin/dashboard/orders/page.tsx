@@ -90,7 +90,7 @@ function Order() {
         <TableBody>
           {data?.data.data.map((item: any, index: number) => {
             return (
-              <TableRow>
+              <TableRow key={item._id}>
                 <TableCell className="font-medium text-center">
                   {(page - 1) * 10 + index + 1}
                 </TableCell>

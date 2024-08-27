@@ -2,6 +2,7 @@
 const nextConfig = {
     experimental: {
         instrumentationHook: true,
+        missingSuspenseWithCSRBailout: false,
     },
     reactStrictMode: false,
     images: {

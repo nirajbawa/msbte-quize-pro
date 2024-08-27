@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import CartSectionCard from "@/components/CartSectionCard";
 import ClientOnly from "@/components/ClientOnly";

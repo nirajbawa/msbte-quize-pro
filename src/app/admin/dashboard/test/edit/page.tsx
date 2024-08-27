@@ -50,7 +50,7 @@ function EditTest() {
     resolver: zodResolver(testEditSchema),
     defaultValues: {
       title: "",
-      price: 1,
+      price: "1",
       publish: "",
     },
   });
@@ -149,10 +149,11 @@ function EditTest() {
 
       setBanner(data?.data.banner);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, createTestForm.reset]);
 
   return (
-    <ClientOnly>
+  
       <main className="w-full homeLayout pt-28 gap-12 text-gray-800 flex justify-center flex-col items-center pb-28 ">
         <Form {...createTestForm}>
           <form
@@ -283,7 +284,7 @@ function EditTest() {
           </form>
         </Form>
       </main>
-    </ClientOnly>
+
   );
 }
 

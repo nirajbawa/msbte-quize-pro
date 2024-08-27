@@ -4,7 +4,7 @@ import {
   getCartItems,
   removeItemFromCart,
 } from "@/api-requests/CartRequest";
-import create from "zustand";
+import { create } from 'zustand';
 import { persist } from "zustand/middleware";
 
 interface cart {

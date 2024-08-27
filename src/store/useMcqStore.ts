@@ -1,5 +1,5 @@
 "use client";
-import create from "zustand";
+import { create } from 'zustand';
 import { getQuestion } from "@/api-requests/TestQuestionsRequest";
 import { submitQuestions } from "@/api-requests/TestQuestionsRequest";
 

@@ -86,9 +86,9 @@ function Submit() {
     // Add the event listener when the component is mounted
     window.addEventListener("beforeunload", handleBeforeUnload);
 
-    // if (submittedQuestions.length == 0) {
-    //   router.back();
-    // }
+    if (submittedQuestions.length == 0) {
+      router.back();
+    }
     const totalNoOfQuestions = submittedQuestions.length;
     let totalNoOfUnsolvedQuestions = 0;
     let totalNoOfSolvedQuestions = 0;
@@ -175,12 +175,13 @@ function Submit() {
     ]);
 
     setQuestions(submittedQuestions);
-    // makeSubmitEmpty();
+    makeSubmitEmpty();
 
     // Cleanup the event listener when the component is unmounted
     return () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import Lottiefiles from "./Lottiefiles";
 
-function Loading({ animation }) {
+function Loading({ animation }:any) {
   const lottieProps = {
     loop: true,
     autoplay: true,
