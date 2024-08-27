@@ -24,7 +24,7 @@ const TestCard = ({ title, img, btnUrl, price }: TestCardProps) => {
         <CardTitle
           className={`${
             title.length > 23 ? "mb-0" : "mb-6"
-          } text-center leading-8`}
+          } text-center leading-4 text-xl`}
         >
           {title}
         </CardTitle>

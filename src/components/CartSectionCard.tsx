@@ -45,7 +45,9 @@ const CartSectionCard = ({
       <Card>
         <CardHeader>
           <CardTitle
-            className={`${title.length > 23 ? "mb-0" : "mb-6"} text-xl`}
+            className={`${
+              title.length > 23 ? "mb-0" : "mb-6"
+            } text-xl leading-4 text-lg`}
           >
             {title}
           </CardTitle>

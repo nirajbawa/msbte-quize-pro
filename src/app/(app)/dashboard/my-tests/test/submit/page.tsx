@@ -111,16 +111,15 @@ function Submit() {
     }
 
     submittedQuestions.forEach((item: any) => {
-      if (item?.selectedAnswer) {
+      if (item?.selectedAnswer === "") {
         totalNoOfUnsolvedQuestions++;
       } else {
         totalNoOfSolvedQuestions++;
-      }
-
-      if (item.isAnswerCorrect) {
-        totalNoOfCorrectAnswer++;
-      } else {
-        totalNoOfUnCorrectAnswer++;
+        if (item.isAnswerCorrect) {
+          totalNoOfCorrectAnswer++;
+        } else {
+          totalNoOfUnCorrectAnswer++;
+        }
       }
     });
 
@@ -128,7 +127,7 @@ function Submit() {
       <>
         {`Solved in`}
         <br />
-        {`${totalTakeToSolve} ${unit}`}
+        {`${parseFloat(totalTakeToSolve.toString()).toFixed(2)} ${unit}`}
       </>
     );
 
@@ -181,7 +180,7 @@ function Submit() {
     return () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

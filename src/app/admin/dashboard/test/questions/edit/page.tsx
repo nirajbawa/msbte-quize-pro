@@ -29,6 +29,7 @@ import { AxiosError } from "axios";
 import { ApiResponse } from "@/types/ApiResponse";
 import { Loader2 } from "lucide-react";
 import uuid from "react-uuid";
+import { Textarea } from "@/components/ui/textarea";
 
 function Edit() {
   const searchParams = useSearchParams();
@@ -157,9 +158,11 @@ function Edit() {
                       name={`questions.${index}.question`}
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="pl-1">Question</FormLabel>
+                          <FormLabel className="pl-1">
+                            Question {index + 1} :
+                          </FormLabel>
                           <FormControl>
-                            <Input
+                            <Textarea
                               placeholder="Question"
                               {...field}
                               {...register(`questions.${index}.question`)}

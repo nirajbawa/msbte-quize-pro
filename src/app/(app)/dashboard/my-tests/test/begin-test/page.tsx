@@ -66,111 +66,8 @@ function BeginTest() {
 
   const { value } = useTimeModel(stopwatch);
 
-  const enterFullscreen = () => {
-    const element = elementRef.current;
-    if (element) {
-      setFullScreen(true);
-      if (element.requestFullscreen) {
-        element.requestFullscreen().catch((err) => {
-          console.error(
-            `Error attempting to enable full-screen mode: ${err.message} (${err.name})`
-          );
-        });
-      } else if ((element as any).mozRequestFullScreen) {
-        // Firefox
-        (element as any).mozRequestFullScreen().catch((err: any) => {
-          console.error(
-            `Error attempting to enable full-screen mode: ${err.message} (${err.name})`
-          );
-        });
-      } else if ((element as any).webkitRequestFullscreen) {
-        // Chrome, Safari, and Opera
-        (element as any).webkitRequestFullscreen().catch((err: any) => {
-          console.error(
-            `Error attempting to enable full-screen mode: ${err.message} (${err.name})`
-          );
-        });
-      } else if ((element as any).msRequestFullscreen) {
-        // IE/Edge
-        (element as any).msRequestFullscreen().catch((err: any) => {
-          console.error(
-            `Error attempting to enable full-screen mode: ${err.message} (${err.name})`
-          );
-        });
-      }
-    }
-  };
+  
 
-  const exitFullscreen = () => {
-    setFullScreen(false);
-    if (document.exitFullscreen) {
-      document.exitFullscreen().catch((err) => {
-        console.error(
-          `Error attempting to exit full-screen mode: ${err.message} (${err.name})`
-        );
-      });
-    } else if ((document as any).mozCancelFullScreen) {
-      // Firefox
-      (document as any).mozCancelFullScreen().catch((err: any) => {
-        console.error(
-          `Error attempting to exit full-screen mode: ${err.message} (${err.name})`
-        );
-      });
-    } else if ((document as any).webkitExitFullscreen) {
-      // Chrome, Safari, and Opera
-      (document as any).webkitExitFullscreen().catch((err: any) => {
-        console.error(
-          `Error attempting to exit full-screen mode: ${err.message} (${err.name})`
-        );
-      });
-    } else if ((document as any).msExitFullscreen) {
-      // IE/Edge
-      (document as any).msExitFullscreen().catch((err: any) => {
-        console.error(
-          `Error attempting to exit full-screen mode: ${err.message} (${err.name})`
-        );
-      });
-    }
-  };
-
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      if (!document.fullscreenElement) {
-        console.log("Exited fullscreen");
-      } else {
-        console.log("Entered fullscreen");
-      }
-    };
-
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
-    document.addEventListener("mozfullscreenchange", handleFullscreenChange);
-    document.addEventListener("MSFullscreenChange", handleFullscreenChange);
-
-    return () => {
-      document.removeEventListener("fullscreenchange", handleFullscreenChange);
-      document.removeEventListener(
-        "webkitfullscreenchange",
-        handleFullscreenChange
-      );
-      document.removeEventListener(
-        "mozfullscreenchange",
-        handleFullscreenChange
-      );
-      document.removeEventListener(
-        "MSFullscreenChange",
-        handleFullscreenChange
-      );
-    };
-  }, []);
-
-  const screenModeSwitcher = () => {
-    if (fullScreen) {
-      exitFullscreen();
-    } else {
-      enterFullscreen();
-    }
-  };
 
   const nextQuestion = () => {
     setAttempted();
@@ -208,7 +105,6 @@ function BeginTest() {
       isNavBarHidden: true,
       isFooterHidden: true,
     });
-    enterFullscreen();
     loadMcqData(searchParams.get("id"));
   }, []);
 
@@ -249,7 +145,6 @@ function BeginTest() {
           )
         }
         time={`${value.h} : ${value.m} : ${value.s}`}
-        screenModeSwitcher={screenModeSwitcher}
       />
       <main className="bg-white w-full h-full xl:px-20 gap-12 text-gray-800 flex flex-col lg:flex-row">
         {mcqStore.length != 0 ? (

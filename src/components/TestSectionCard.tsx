@@ -48,7 +48,9 @@ const TestSectionCard = ({
       <Card>
         <CardHeader>
           <CardTitle
-            className={`${title.length > 20 ? "mb-0" : "mb-6"} leading-8`}
+            className={`${
+              title.length > 20 ? "mb-0" : "mb-6"
+            } leading-4 text-xl`}
           >
             {title}
           </CardTitle>
