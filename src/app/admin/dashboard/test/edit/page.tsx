@@ -50,7 +50,7 @@ function EditTest() {
     resolver: zodResolver(testEditSchema),
     defaultValues: {
       title: "",
-      price: "1",
+      price: "",
       publish: "",
     },
   });
@@ -117,8 +117,6 @@ function EditTest() {
 
   function onSubmitCreateTest(values: z.infer<typeof testEditSchema>) {
     const data: any = values;
-    console.log("data : ", data);
-    console.log("banner : ", banner);
     if (banner != null) {
       data["banner"] = banner;
       setIsFormSubmitting(true);
@@ -153,12 +151,12 @@ function EditTest() {
   }, [data, createTestForm.reset]);
 
   return (
-  
+    <ClientOnly>
       <main className="w-full homeLayout pt-28 gap-12 text-gray-800 flex justify-center flex-col items-center pb-28 ">
         <Form {...createTestForm}>
           <form
-            onSubmit={createTestForm.handleSubmit(onSubmitCreateTest)}
             className="space-y-8 w-96"
+            onSubmit={createTestForm.handleSubmit(onSubmitCreateTest)}
           >
             <FormField
               control={createTestForm.control}
@@ -263,7 +261,7 @@ function EditTest() {
             <div className="flex justify-center gap-x-5">
               <Button
                 type="button"
-                onClick={createTestForm.handleSubmit(onSubmitCreateTest)}
+                onClick={() => onSubmitCreateTest(createTestForm.getValues())}
               >
                 {isFormSubmitting ? (
                   <>
@@ -284,7 +282,7 @@ function EditTest() {
           </form>
         </Form>
       </main>
-
+    </ClientOnly>
   );
 }
 

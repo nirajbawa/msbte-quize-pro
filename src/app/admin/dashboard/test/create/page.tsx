@@ -117,7 +117,7 @@ function Create() {
   }
 
   return (
-  
+    <ClientOnly>
       <main className="w-full homeLayout pt-28 gap-12 text-gray-800 flex justify-center flex-col items-center pb-28 ">
         <Form {...createTestForm}>
           <form
@@ -214,7 +214,7 @@ function Create() {
           </form>
         </Form>
       </main>
-  
+    </ClientOnly>
   );
 }
 
