@@ -21,7 +21,7 @@ const header = () => {
         <h6 className="font-bold mb-5 text-xl sm:mb-10">
           Master the Art of Exam Success
         </h6>
-        <p>
+        <p className="text-sm sm:text-lg xl:pr-32">
           Transforming Learning into Achievement Your One-Stop Solution for
           MSBTE Exam Preparation
         </p>

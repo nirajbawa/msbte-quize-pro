@@ -134,7 +134,7 @@ const SignInForm = () => {
                 </FormItem>
               )}
             />
-            <div className="w-full flex justify-between items-center mt-10">
+            <div className="w-full flex justify-between items-center mt-10 flex-col-reverse sm:flex-row gap-10 sm:gap-0">
               <p>
                 {" "}
                 Not a member yet?{" "}

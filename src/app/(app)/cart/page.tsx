@@ -25,7 +25,7 @@ function Cart() {
 
   return (
     <ClientOnly>
-      <main className="w-full min-h-screen homeLayout pt-28  gap-12 text-gray-800 flex justify-between flex-col md:flex-wrap md:flex-row">
+      <main className="w-full min-h-screen homeLayout px-2 sm:px-10 md:px-40 pt-28  gap-12 text-gray-800 flex justify-between flex-col md:flex-wrap md:flex-row">
         <div className="blurCss w-full min-h-screen rounded-xl flex flex-col">
           <h1 className="rowdies text-center md:text-left py-6 px-10 border-gray-100 border-b-2 font-bold text-2xl">
             Shopping Cart

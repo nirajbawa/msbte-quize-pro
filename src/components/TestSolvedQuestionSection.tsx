@@ -24,7 +24,7 @@ function TestSolvedQuestionSection({
   setQuestion,
 }: TestSolvedQuestionSectionProps) {
   return (
-    <div className=" w-full justify-center gap-x-10 px-10 lg:w-[40%] min-h-screen p-5 flex flex-col sm:flex-row  lg:flex-col">
+    <div className="w-full justify-center gap-x-10 p-5 sm:px-10 lg:w-[40%] min-h-screen p-5 flex flex-col sm:flex-row  lg:flex-col">
       <div className="w-full flex p-5 px-2 h-full lg:h-auto flex-wrap gap-1 justify-center bg-slate-100 rounded-xl">
         {mcqAnswers.map((value: QuestionAnswer, i: number) => (
           <div

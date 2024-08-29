@@ -55,17 +55,17 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full h-16  flex flex-wrap justify-between px-3 md:px-36 items-center fixed blurCss z-40 ${
+      className={`w-full h-16 flex flex-wrap justify-between px-0 gap-0 md:px-36 items-center fixed blurCss z-40 ${
         layout.isNavBarHidden ? "hidden" : ""
       }`}
     >
       <Link href="/">
-        <h1 className="p-5 font-extrabold text-xl rowdies text-gray-800">
+        <h1 className="px-2 pl-3 py-2 md:p-5 font-extrabold text-xl rowdies text-gray-800">
           MSBTEQuiz<sup className="text-blue-500 ">Pro</sup>
         </h1>
       </Link>
       <div className="flex gap-5">
-        <div className="flex flex-row xl:hidden justify-center items-center">
+        <div className="flex gap-2 flex-row xl:hidden justify-center items-center">
           <Link href="/cart" className="w-full rounded-full  flex-row">
             <Button variant="ghost">
               <ShoppingCartIcon />
@@ -89,7 +89,7 @@ const Navbar = () => {
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem>
+                <DropdownMenuItem  onClick={() => router.push("/dashboard")}>
                   <Use className="mr-2 h-4 w-4" />
                   <span>Profile</span>
                 </DropdownMenuItem>

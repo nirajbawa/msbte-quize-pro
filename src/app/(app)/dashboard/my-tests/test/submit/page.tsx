@@ -184,7 +184,7 @@ function Submit() {
   }, []);
 
   return (
-    <main className="bg-white w-full min-h-screen h-full pt-28 px-10 lg:px-40 xl:px-56 gap-12 text-gray-800 flex justify-start flex-col">
+    <main className="bg-white w-full min-h-screen h-full pt-28 px-5 sm:px-10 lg:px-40 xl:px-56 gap-12 text-gray-800 flex justify-start flex-col">
       <div className="w-full flex bg-slate-100 flex-col p-2 md:p-5 py-10 gap-5 rounded-xl justify-center">
         {questions.length != 0 ? (
           <p className="w-full text-3xl font-bold text-center mb-5 mt-10">

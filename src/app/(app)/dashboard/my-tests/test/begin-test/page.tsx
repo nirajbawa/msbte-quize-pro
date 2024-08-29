@@ -113,6 +113,7 @@ function BeginTest() {
   }, [mcqStore]);
 
   useEffect(() => {
+    stopwatch.reset();
     // Function to handle the beforeunload event
     const handleBeforeUnload = (event: any) => {
       // Custom message (some browsers may ignore this)

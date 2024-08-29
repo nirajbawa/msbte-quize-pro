@@ -9,12 +9,12 @@ const Footer = () => {
   const layout = useLayoutStore((state: any) => state.layout);
   return (
     <footer
-      className={`homeLayout flex-col flex items-center justify-between sm:flex-row py-10 ${
+      className={`homeLayout flex items-center justify-between flex-col-reverse sm:flex-row py-10 ${
         layout.isFooterHidden ? "hidden" : ""
       }`}
     >
       <Link href="/">
-        <div className="flex items-center flex-col sm:flex-row">
+        <div className="flex items-center flex-col sm:flex-row text-center">
           <h1 className="p-5 font-extrabold text-xl rowdies text-gray-800">
             MSBTEQuiz<sup className="text-blue-500 ">Pro</sup>
           </h1>
@@ -22,15 +22,15 @@ const Footer = () => {
           MsbteWallah.in
         </div>
       </Link>
-      <div className="flex gap-5 justify-center items-center">
-        <div className="flex justify-between items-center gap-5">
-          <Link href="/about" className="w-full">
+      <div className="flex gap-5 justify-center items-center flex-col sm:flex-row">
+        <div className="flex justify-between w-full gap-1 sm:gap-5 sm:justify-between items-center flex-col sm:flex-row">
+          <Link href="/about" className="w-full flex justify-center items-center">
             <Button variant="ghost">About</Button>
           </Link>
-          <Link href="/contact-us" className="w-full">
+          <Link href="/contact-us" className="w-full flex justify-center items-center">
             <Button variant="ghost">Contact Us</Button>
           </Link>
-          <Link href="/privacy-policy" className="w-full">
+          <Link href="/privacy-policy" className="w-full flex justify-center items-center">
             <Button variant="ghost">Privacy Policy</Button>
           </Link>
         </div>

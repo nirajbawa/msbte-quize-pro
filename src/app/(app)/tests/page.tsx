@@ -121,8 +121,8 @@ function Tests() {
 
   if (isError || data.pages[0]?.data.totalPages === 0) {
     return (
-      <main className="w-full homeLayout min-h-screen pt-28 gap-12 text-gray-800 flex justify-center items-center flex-col md:flex-wrap md:flex-row">
-        <div className="w-[30%]">
+      <main className="w-full homeLayout min-h-screen pt-5 sm:pt-20 gap-12 text-gray-800 flex justify-center items-center flex-col md:flex-wrap md:flex-row">
+        <div className="sm:w-[30%]">
           <Lottiefiles
             loop={lottieProps.loop}
             autoplay={lottieProps.autoplay}
@@ -223,7 +223,7 @@ function Tests() {
         }
       >
         <main
-          className={` gap-x-16 gap-y-20 text-gray-800 flex ${
+          className={`gap-x-16 gap-y-20 text-gray-800 flex ${
             data.pages[0].data.length < 3 ? "justify-start" : "justify-center"
           } pb-16 items-center flex-col md:flex-wrap md:flex-row`}
         >

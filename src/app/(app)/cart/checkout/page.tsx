@@ -128,7 +128,7 @@ function Checkout() {
   }, [data]);
 
   return (
-    <main className="bg-white w-full min-h-screen homeLayout pt-28  gap-12 text-gray-800 flex justify-center items-center">
+    <main className="bg-white w-full min-h-screen px-5 sm:homeLayout sm:pt-28  gap-12 text-gray-800 flex justify-center items-center">
       <div className="blurCss w-full md:w-[60%] h-[30rem] rounded-xl flex px-10 gap-10 flex-col justify-center items-center">
         <h1 className="rowdies capitalize text-2xl text-center font-bold">
           {isPending || isError ? (

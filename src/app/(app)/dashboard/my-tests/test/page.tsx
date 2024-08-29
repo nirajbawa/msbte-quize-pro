@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
@@ -7,19 +7,25 @@ import { getUserTest } from "@/api-requests/TestRequests";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
+import useMcqStore from "@/store/useMcqStore";
 
 function TestDetails() {
   const searchParams = useSearchParams();
   const [loader, setLoader] = useState<boolean>(false);
+  const setStoreEmpty = useMcqStore((state: any) => state.setStoreEmpty);
 
   const { isPending, isError, data } = useQuery({
     queryKey: ["testInfo"],
     queryFn: async () => await getUserTest(searchParams.get("id")),
   });
 
+  useEffect(()=>{
+    setStoreEmpty()
+  }, [])
+
   return (
-    <main className="bg-white w-full min-h-screen homeLayout pt-28  gap-12 text-gray-800 flex justify-center items-center">
-      <div className="blurCss w-full md:w-[60%] h-[30rem] rounded-xl flex px-10 gap-10 flex-col justify-center items-center">
+    <main className="bg-white w-full min-h-screen sm:homeLayou px-5 t sm:pt-28 gap-12 text-gray-800 flex justify-center items-center">
+      <div className="blurCss w-full md:w-[60%] h-[30rem] rounded-xl flex sm:px-10 gap-10 flex-col justify-center items-center">
         <h1 className="rowdies capitalize text-2xl text-center font-bold">
           {isPending || isError ? (
             <div className="space-y-2">

@@ -35,9 +35,9 @@ const Dashboard = () => {
   const token = session?.user as User;
 
   return (
-    <main className="w-full min-h-screen h-full homeLayout px-10 pt-28 rounded-xl gap-12 text-gray-800 flex justify-between items-center flex-col">
-      <div className="bg-slate-100 h-full mt-10 md:mt-5 w-96 py-28 px-20 flex flex-col gap-10 rounded-2xl">
-        <div className="">
+    <main className="w-full min-h-screen h-full homeLayout sm:px-10 pt-28 rounded-xl gap-12 text-gray-800 flex justify-between items-center flex-col">
+      <div className="bg-slate-100 h-full mt-10 md:mt-5 w-full sm:w-96 p-10 sm:py-28 sm:px-20 flex flex-col gap-10 rounded-2xl">
+        <div>
           <Image
             src={`https://ui-avatars.com/api/?name=${
               token?.username || ""

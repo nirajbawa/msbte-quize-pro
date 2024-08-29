@@ -148,6 +148,18 @@ const useMcqStore = create((set: any, get: any) => ({
   makeSubmitEmpty: () => {
     set({ submittedQuestions: [] });
   },
+  setStoreEmpty:()=>{
+    set({
+      mcqQuestions: [],
+      index: 0,
+      mcqAnswers: [],
+      attempted: 0,
+      attemptedAndReview: 0,
+      notAttemptedAndReview: 0,
+      submittedQuestions: [],
+      timeToSolve: {},
+    })
+  }
 }));
 
 export default useMcqStore;

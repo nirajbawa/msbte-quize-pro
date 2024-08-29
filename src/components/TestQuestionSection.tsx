@@ -53,7 +53,7 @@ function TestQuestionSection({
   };
 
   return (
-    <div className="w-[100%] min-h-screen p-10">
+    <div className="w-[100%] min-h-screen p-5 sm:p-10">
       <div className="w-full flex flex-col gap-5 pt-16">
         <h1 className="font-bold">Question {index + 1} : </h1>
         <p className="min-h-44">{question}</p>
