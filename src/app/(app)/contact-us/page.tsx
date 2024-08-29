@@ -10,7 +10,7 @@ const ContactUs = () => {
   return (
     <div className="py-28 sm:pb-0">
       <header className="homeLayout mb-10">
-        <h1 className="p-5 font-extrabold rowdies text-gray-800 text-center text-5xl">
+        <h1 className="p-5 text-3xl font-extrabold rowdies text-gray-800 text-center sm:text-5xl">
           Contact Us
         </h1>
       </header>

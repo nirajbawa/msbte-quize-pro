@@ -12,11 +12,11 @@ const PrivacyPolicy = () => {
   return (
     <div className="w-full py-28 sm:pb-0">
       <header className="homeLayout mb-10">
-        <h1 className="p-5 font-extrabold rowdies text-gray-800 text-center text-5xl">
+        <h1 className="p-5 text-3xl font-extrabold rowdies text-gray-800 text-center sm:text-5xl">
           Privacy Policy
         </h1>
       </header>
-      <div className="min-h-screen">
+      <div className="min-h-screen max-h-full">
         <AboutSections
           title1="MSBTEQuizPro"
           title2=""
@@ -29,7 +29,7 @@ We use your personal data to provide and improve the Service. By using the Servi
             bgColor: "bg-gray-100",
           }}
         />
-        <div className="w-full min-h-screen max-h-full px-5 sm:homeLayout flex flex-wrap flex-col text-gray-800 sm:justify-between py-16 sm:py-20 sm:pb-32  xl:py-10 ">
+        <div className="w-full px-5 sm:homeLayout flex flex-wrap flex-col text-gray-800 sm:justify-between py-16 sm:py-20 sm:pb-32  xl:py-10 ">
           {/* Interpretation and Definitions */}
           <h2 className="text-2xl font-semibold mt-8 mb-4">
             Interpretation and Definitions
@@ -52,7 +52,7 @@ We use your personal data to provide and improve the Service. By using the Servi
             <li>
               <strong>Affiliate:</strong> means an entity that controls, is
               controlled by, or is under common control with a party, where
-              {'"control"'} means ownership of 50% or more of the shares, equity
+              "control" means ownership of 50% or more of the shares, equity
               interest, or other securities entitled to vote for the election of
               directors or other managing authority.
             </li>
@@ -601,7 +601,7 @@ We use your personal data to provide and improve the Service. By using the Servi
           </p>
           <ul className="list-disc pl-6 mb-6">
             <li className="mb-2">
-              <strong>By email:</strong>{" "}
+              <strong>By email:</strong>
               <a
                 href="mailto:msbtequizpro@gmail.com"
                 className="text-blue-500 hover:underline"
@@ -610,7 +610,7 @@ We use your personal data to provide and improve the Service. By using the Servi
               </a>
             </li>
             <li className="mb-2">
-              <strong>By visiting this page on our website:</strong>{" "}
+              <strong>By visiting this page on our website:</strong>
               <a
                 href={`${process.env.BASE_URL}/contact-us`}
                 className="text-blue-500 hover:underline"
@@ -619,7 +619,7 @@ We use your personal data to provide and improve the Service. By using the Servi
               </a>
             </li>
             <li className="mb-2">
-              <strong>By phone number:</strong>{" "}
+              <strong>By phone number:</strong>
               <a
                 href="tel:9359839551"
                 className="text-blue-500 hover:underline"
