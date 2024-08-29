@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const PrivacyPolicy = () => {
   return (
-    <div className="py-28 sm:pb-0">
+    <div className="w-full py-28 sm:pb-0">
       <header className="homeLayout mb-10">
         <h1 className="p-5 font-extrabold rowdies text-gray-800 text-center text-5xl">
           Privacy Policy
@@ -29,7 +29,7 @@ We use your personal data to provide and improve the Service. By using the Servi
             bgColor: "bg-gray-100",
           }}
         />
-        <div className="w-full min-h-screen max-h-full homeLayout flex flex-wrap flex-col text-gray-800 sm:justify-between py-16 sm:py-20 sm:pb-32  xl:py-10 ">
+        <div className="w-full min-h-screen max-h-full px-5 sm:homeLayout flex flex-wrap flex-col text-gray-800 sm:justify-between py-16 sm:py-20 sm:pb-32  xl:py-10 ">
           {/* Interpretation and Definitions */}
           <h2 className="text-2xl font-semibold mt-8 mb-4">
             Interpretation and Definitions
@@ -57,8 +57,8 @@ We use your personal data to provide and improve the Service. By using the Servi
               directors or other managing authority.
             </li>
             <li>
-              <strong>Company:</strong> (referred to as either {'"the Company"'}
-              ,{'"We", "Us", or "Our"'} in this Agreement) refers to MSBTE Quiz
+              <strong>Company:</strong> (referred to as either the Company
+              ,"We", "Us", or "Our" in this Agreement) refers to MSBTE Quiz
               Pro.
             </li>
             <li>
