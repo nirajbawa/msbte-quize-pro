@@ -40,9 +40,11 @@ export async function middleware(req: NextRequest) {
         if (dataOrder.status) {
           return NextResponse.next();
         } else {
+          console.log("error is active")
           return NextResponse.redirect(new URL("/", req.url));
         }
       } catch (error) {
+        console.log(error)
         return NextResponse.redirect(new URL("/", req.url));
       }
     } else {
