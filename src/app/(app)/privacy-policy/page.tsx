@@ -596,7 +596,7 @@ const PrivacyPolicy = () => {
                 msbtewallah@gmail.com
               </a>
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               <strong>By visiting this page on our website:</strong>
               <a
                 href={`${process.env.BASE_URL}/contact-us`}
@@ -613,7 +613,7 @@ const PrivacyPolicy = () => {
               >
                 9359839551
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
