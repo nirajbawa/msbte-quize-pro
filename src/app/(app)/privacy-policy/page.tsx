@@ -3,7 +3,7 @@ import React from "react";
 import AboutSections from "@/components/AboutSections";
 import PrivacyPolicyAnimation from "@/assets/lottiefiles/privacy-policy.json";
 import { Metadata } from "next";
-import { Link } from "lucide-react";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -619,7 +619,7 @@ We use your personal data to provide and improve the Service. By using the Servi
               </Link>
             </li>
             <li className="mb-2">
-              <strong>By phone number:</strong>
+              <strong>By phone number : </strong>
               <a
                 href="tel:9359839551"
                 className="text-blue-500 hover:underline"

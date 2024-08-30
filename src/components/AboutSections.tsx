@@ -36,9 +36,9 @@ const AboutSections = ({
     >
       <div className="w-full sm:w-[40%] mt-14 flex flex-col justify-between gap-y-10 ">
         <h1 className="text-3xl font-extrabold rowdies">{title1}</h1>
-        <div className="flex text-sm sm:text-lg flex-col">{content1}</div>
+        <div className="flex  flex-col">{content1}</div>
         <h1 className="text-3xl font-extrabold rowdies">{title2}</h1>
-        <div className="flex text-sm sm:text-lg flex-col">{content2}</div>
+        <div className="flex flex-col">{content2}</div>
       </div>
       <div className="w-full sm:w-[50%] flex justify-center">
         <Lottiefiles
