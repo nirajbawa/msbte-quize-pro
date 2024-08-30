@@ -544,8 +544,25 @@ We use your personal data to provide and improve the Service. By using the Servi
           </section>
 
 
-          {/* Refunds/Cancellations Policy */}
-          <div className="space-y-4 mt-3 mb-4">
+          <div className="mt-3 mb-4">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Products/Services</h2>
+
+            <div className="mb-4">
+              <h3 className="font-semibold text-gray-700">Products/Services Provided:</h3>
+              <p className="text-gray-600 mt-2">
+                MSBTE Quiz Pro provides online quizzes designed to help students prepare for MSBTE exams. The quizzes are curated to match the syllabus and are aimed at providing effective practice.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-gray-700">Service Availability:</h3>
+              <p className="text-gray-600 mt-2">
+                All services are provided as per availability and may be subject to change based on updates to the MSBTE syllabus or other factors.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4 mt-5 mb-4">
             <h2 className="text-2xl font-semibold text-gray-800">Refunds/Cancellations Policy</h2>
             <div className="space-y-2">
               <h3 className="font-semibold text-gray-700">No Refunds After Purchase:</h3>
@@ -567,7 +584,6 @@ We use your personal data to provide and improve the Service. By using the Servi
             </div>
           </div>
 
-          {/* Pricing in INR */}
           <div className="space-y-4 mt-6 mb-4">
             <h2 className="text-2xl font-semibold text-gray-800">Pricing in INR</h2>
             <div className="space-y-2">
@@ -584,7 +600,6 @@ We use your personal data to provide and improve the Service. By using the Servi
             </div>
           </div>
 
-          {/* Shipping Policy */}
           <div className="space-y-4 mt-6 mb-4">
             <h2 className="text-2xl font-semibold text-gray-800">Shipping Policy</h2>
             <div className="space-y-2">
@@ -690,6 +705,13 @@ We use your personal data to provide and improve the Service. By using the Servi
               >
                 9359839551
               </a>
+            </li>
+            <li className="mb-2">
+              <strong>Operating Address : </strong>
+                <p className="mt-1">
+                  MSBTE Quiz pro, Village Ranzani Tal. Taloda Dist. Nandurbar, Maharashtra India - 425413
+                </p>
+              
             </li>
           </ul>
         </div>
