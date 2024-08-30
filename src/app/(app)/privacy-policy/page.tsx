@@ -679,7 +679,7 @@ We use your personal data to provide and improve the Service. By using the Servi
                 href={`${process.env.BASE_URL}/contact-us`}
                 className="text-blue-500 hover:underline w-full"
               >
-                {`${process.env.BASE_URL}/contact-us`}
+                Contact Us
               </Link>
             </li>
             <li className="mb-2">
