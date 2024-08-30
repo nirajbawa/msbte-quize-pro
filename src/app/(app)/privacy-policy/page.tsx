@@ -118,7 +118,7 @@ We use your personal data to provide and improve the Service. By using the Servi
             </li>
           </ul>
 
-      
+
           <h2 className="text-2xl font-semibold mt-8 mb-4">
             Collecting and Using Your Personal Data
           </h2>
@@ -542,6 +542,70 @@ We use your personal data to provide and improve the Service. By using the Servi
               we cannot guarantee its absolute security.
             </p>
           </section>
+
+
+          {/* Refunds/Cancellations Policy */}
+          <div className="space-y-4 mt-3 mb-4">
+            <h2 className="text-2xl font-semibold text-gray-800">Refunds/Cancellations Policy</h2>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-gray-700">No Refunds After Purchase:</h3>
+              <p className="text-gray-600">
+                Once a quiz or service is purchased on MSBTE Quiz Pro, no refunds will be provided.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-gray-700">Processing Refunds:</h3>
+              <p className="text-gray-600">
+                In cases where a refund is applicable, it will be processed within 5-7 working days and credited to the customer’s bank account.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-gray-700">Payment Gateway:</h3>
+              <p className="text-gray-600">
+                All payments on our site are processed through Razorpay payment gateway, ensuring secure and reliable transactions.
+              </p>
+            </div>
+          </div>
+
+          {/* Pricing in INR */}
+          <div className="space-y-4 mt-6 mb-4">
+            <h2 className="text-2xl font-semibold text-gray-800">Pricing in INR</h2>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-gray-700">Currency:</h3>
+              <p className="text-gray-600">
+                All prices listed on MSBTE Quiz Pro are in Indian Rupees (INR).
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-gray-700">Price Changes:</h3>
+              <p className="text-gray-600">
+                We reserve the right to change prices at any time without prior notice.
+              </p>
+            </div>
+          </div>
+
+          {/* Shipping Policy */}
+          <div className="space-y-4 mt-6 mb-4">
+            <h2 className="text-2xl font-semibold text-gray-800">Shipping Policy</h2>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-gray-700">Digital Products:</h3>
+              <p className="text-gray-600">
+                All quizzes and services offered on MSBTE Quiz Pro are digital and delivered online.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-gray-700">Delivery Timeline:</h3>
+              <p className="text-gray-600">
+                Access to purchased quizzes is granted immediately upon successful payment.
+              </p>
+              <p className="text-gray-600">
+                In case of any technical issues, access will be provided within a maximum of 24 hours.
+              </p>
+            </div>
+          </div>
+
+
+
           <h2 className="text-2xl font-semibold mt-6 mb-4">
             Children's Privacy
           </h2>
@@ -601,7 +665,7 @@ We use your personal data to provide and improve the Service. By using the Servi
           </p>
           <ul className="list-disc pl-6 mb-6">
             <li className="mb-2">
-              <strong>By email:</strong>
+              <strong>By email : </strong>
               <a
                 href="mailto:msbtequizpro@gmail.com"
                 className="text-blue-500 hover:underline"
