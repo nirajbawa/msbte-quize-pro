@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
           Privacy Policy
         </h1>
       </header>
-      <div className="min-h-screen max-h-full">
+      <div className="w-full min-h-screen max-h-full">
         <AboutSections
           title1="MSBTEQuizPro"
           title2=""
@@ -29,8 +29,7 @@ We use your personal data to provide and improve the Service. By using the Servi
             bgColor: "bg-gray-100",
           }}
         />
-        <div className="w-full px-5 sm:homeLayout flex flex-wrap flex-col text-gray-800 sm:justify-between py-16 sm:py-20 sm:pb-32  xl:py-10 ">
-          {/* Interpretation and Definitions */}
+        <div className="w-full px-5 sm:homeLayout flex flex-wrap flex-col text-gray-800 sm:justify-between py-16 sm:py-20 sm:pb-32 xl:py-10 ">
           <h2 className="text-2xl font-semibold mt-8 mb-4">
             Interpretation and Definitions
           </h2>
@@ -118,7 +117,7 @@ We use your personal data to provide and improve the Service. By using the Servi
             </li>
           </ul>
 
-          {/* Collecting and Using Your Personal Data */}
+      
           <h2 className="text-2xl font-semibold mt-8 mb-4">
             Collecting and Using Your Personal Data
           </h2>
