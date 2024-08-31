@@ -66,10 +66,8 @@ const SignInForm = () => {
           variant: "destructive",
         });
       }
-    }
-
-    if (result?.url) {
-      router.push("/admin/dashboard");
+    }else{
+      router.replace("/admin/dashboard");
     }
 
     setIsSubmitting(false);
