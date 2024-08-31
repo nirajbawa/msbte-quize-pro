@@ -68,6 +68,7 @@ const SignInForm = () => {
       }
     }else{
       router.replace("/admin/dashboard");
+      console.log("hello")
     }
 
     setIsSubmitting(false);
