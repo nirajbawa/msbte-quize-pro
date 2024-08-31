@@ -13,6 +13,7 @@ interface AboutSectionProps {
   title2: string;
   content1: any;
   content2: any;
+  height: any;
 }
 
 const AboutSections = ({
@@ -21,6 +22,7 @@ const AboutSections = ({
   title2,
   content1,
   content2,
+  height
 }: AboutSectionProps) => {
   const lottieProps = {
     loop: true,
@@ -40,7 +42,7 @@ const AboutSections = ({
         <h1 className="text-3xl font-extrabold rowdies">{title2}</h1>
         <div className="flex flex-col">{content2}</div>
       </div>
-      <div className="w-full sm:w-[50%] flex justify-center">
+      <div className={`w-full sm:w-[50%] flex justify-center ${height}`}>
         <Lottiefiles
           loop={lottieProps.loop}
           autoplay={lottieProps.autoplay}

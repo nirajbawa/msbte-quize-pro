@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Use",
+  title: "Terms and Conditions",
 };
 
 const TermOfUse = () => {
@@ -14,16 +14,17 @@ const TermOfUse = () => {
     <div className="w-full pt-28 pb-0 sm:pb-0">
       <header className="homeLayout mb-10">
         <h1 className="p-5 text-3xl font-extrabold rowdies text-gray-800 text-center sm:text-5xl">
-          Terms of Use
+          Terms and Conditions
         </h1>
       </header>
-      <div className="w-full min-h-screen max-h-full">
+      <div className="w-full min-h-screen max-h-full ">
         <AboutSections
           title1="MSBTEQuizPro"
           title2=""
-          content1={`Welcome to MSBTE Quiz Pro, accessible via msbtewallah.in. This website is owned and operated by MSBTE Quiz Pro ("Company," "we," "our," or "us"). By accessing or using the Site, you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, please do not use the Site.`}
+          content1={`Welcome to MSBTE Quiz Pro, accessible via msbtequizpro.msbtewallah.in. This website is owned and operated by MSBTE Quiz Pro ("Company," "we," "our," or "us"). By accessing or using the Site, you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, please do not use the Site.`}
           content2=""
-          settings={{
+          height="h-[15rem] sm:h-auto"
+          settings={{ 
             flex: "flex-row",
             animation: TermOfUseAnimation,
             bgColor: "bg-gray-100",

@@ -19,7 +19,7 @@ const Footer = () => {
             MSBTEQuiz<sup className="text-blue-500 ">Pro</sup>
           </h1>
           <span className="hidden sm:inline mr-5">|</span> Copyright © 2024
-          MsbteWallah.in
+          MsbteQuizPro
         </div>
       </Link>
       <div className="flex gap-5 justify-center items-center flex-col sm:flex-row">
@@ -34,7 +34,7 @@ const Footer = () => {
             <Button variant="ghost">Privacy Policy</Button>
           </Link>
           <Link href="/term-of-use" className="w-full flex justify-center items-center">
-            <Button variant="ghost">Term Of Use</Button>
+            <Button variant="ghost">Terms and Conditions</Button>
           </Link>
         </div>
    
