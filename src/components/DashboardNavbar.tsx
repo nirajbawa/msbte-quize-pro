@@ -1,16 +1,18 @@
 "use client";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion, useAnimation } from "framer-motion";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Home from "../app/(app)/page";
+import { User } from "next-auth";
 
 const DashboardNavbar = () => {
   const [menu, setMenu] = useState<boolean>(false);
   const controls = useAnimation();
+  const { data: session } = useSession();
   const openMenu = useCallback(() => {
     const preState = menu;
     controls.start({ y: 0, opacity: 0 });
@@ -33,6 +35,8 @@ const DashboardNavbar = () => {
     }
   }, [menu, controls]);
 
+  const token = useMemo(() => session?.user as User, [session]);
+
   return (
     <nav className="w-full h-16  flex flex-wrap justify-between px-3 md:px-36 items-center fixed blurCss z-40">
       <Link href="/admin/dashboard">
@@ -46,11 +50,10 @@ const DashboardNavbar = () => {
 
       <motion.ul
         animate={controls}
-        className={`items-center  text-md  ${
-          menu
+        className={`items-center  text-md  ${menu
             ? "flex flex-col fixed h-screen top-0 pt-32 left-0 overflow-hidden bg-white w-full gap-6 px-3 md:px-36 z-50"
             : "hidden"
-        } xl:flex xl:gap-x-5`}
+          } xl:flex xl:gap-x-5`}
       >
         <Button
           variant="outline"
@@ -87,7 +90,7 @@ const DashboardNavbar = () => {
         </Link>
 
         <div
-          className={`w-full`}
+          className={`w-full ${token ? "flex" : "hidden"}`}
           onClick={() => {
             menuOff();
             signOut();
