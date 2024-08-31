@@ -69,7 +69,7 @@ const SignInForm = () => {
     }
 
     if (result?.url) {
-      router.replace("/admin/dashboard");
+      router.push("/admin/dashboard");
     }
 
     setIsSubmitting(false);
