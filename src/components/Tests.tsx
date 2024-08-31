@@ -43,8 +43,9 @@ const Tests = () => {
         <h1 className="text-3xl font-extrabold capitalize rowdies text-center mb-10 md:mb-0">
           Explore our quiz tests
         </h1>
-        <div className="flex md:py-10 xl:p-10 flex-col">
+        <div className="flex md:py-10 xl:p-10 flex-col justify-center items-center">
           {isPending || isError || data.data.totalPages === 0 ? (
+            <div className="max-w-96 flex justify-center items-center">
             <Card>
               <CardHeader>
                 <CardTitle className="space-y-3">
@@ -65,6 +66,7 @@ const Tests = () => {
                 </div>
               </CardFooter>
             </Card>
+            </div>
           ) : (
             data &&
             data.data.data.map((item: any, index: number) => (

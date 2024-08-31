@@ -682,7 +682,7 @@ We use your personal data to provide and improve the Service. By using the Servi
             <li className="mb-2">
               <strong>By email : </strong>
               <a
-                href="mailto:msbtequizpro@gmail.com"
+                href="mailtomsbtewallah@gmail.com"
                 className="text-blue-500 hover:underline"
               >
                 msbtewallah@gmail.com

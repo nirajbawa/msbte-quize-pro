@@ -48,7 +48,8 @@ function Tests() {
 
   if (isPending) {
     return (
-      <main className="w-full min-h-screen homeLayout pt-28 gap-12 text-gray-800 flex justify-between items-center flex-col md:flex-wrap md:flex-row">
+      <main className="w-full min-h-screen h-full homeLayout pt-28 gap-12 text-gray-800 flex justify-between  flex-col md:flex-wrap md:flex-row">
+        <div className="w-full h-full flex justify-between  flex-col md:flex-wrap md:flex-row gap-12">
         <Card>
           <CardHeader>
             <CardTitle className="space-y-3">
@@ -115,6 +116,8 @@ function Tests() {
             </div>
           </CardFooter>
         </Card>
+        </div>
+      
       </main>
     );
   }

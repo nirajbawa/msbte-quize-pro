@@ -19,6 +19,7 @@ interface TestCardProps {
 
 const TestCard = ({ title, img, btnUrl, price }: TestCardProps) => {
   return (
+    <div className="max-w-96">
     <Card>
       <CardHeader>
         <CardTitle
@@ -48,6 +49,7 @@ const TestCard = ({ title, img, btnUrl, price }: TestCardProps) => {
         </Link>
       </CardFooter>
     </Card>
+    </div>
   );
 };
 

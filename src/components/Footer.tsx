@@ -33,10 +33,14 @@ const Footer = () => {
           <Link href="/privacy-policy" className="w-full flex justify-center items-center">
             <Button variant="ghost">Privacy Policy</Button>
           </Link>
+          <Link href="/term-of-use" className="w-full flex justify-center items-center">
+            <Button variant="ghost">Term Of Use</Button>
+          </Link>
         </div>
-        <Link href="/">
-          <WhatsAppIcon className="text-green-400 cursor-pointer" />
+   
+        <Link href="https://wa.me/9359839551" target="_blank"><WhatsAppIcon className="text-green-400 cursor-pointer" />
         </Link>
+     
       </div>
     </footer>
   );
