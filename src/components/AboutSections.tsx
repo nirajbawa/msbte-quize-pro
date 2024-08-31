@@ -13,7 +13,7 @@ interface AboutSectionProps {
   title2: string;
   content1: any;
   content2: any;
-  height: any;
+  height?: any;
 }
 
 const AboutSections = ({
