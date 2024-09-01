@@ -45,27 +45,27 @@ const Tests = () => {
         </h1>
         <div className="flex md:py-10 xl:p-10 flex-col justify-center items-center">
           {isPending || isError || data.data.totalPages === 0 ? (
-            <div className="max-w-96 flex justify-center items-center">
-            <Card>
-              <CardHeader>
-                <CardTitle className="space-y-3">
-                  <Skeleton className="h-4 md:w-[350px]" />
-                  <Skeleton className="h-4 md:w-[200px]" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="cursor-pointer w-full">
-                <Skeleton className="h-[200px] md:w-[350px] rounded-xl" />
-                <div className="pt-7 flex justify-center w-full">
-                  <Skeleton className="h-4 w-[70px]" />
-                </div>
-              </CardContent>
+            <div className="min-w-80 max-w-96">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="space-y-3">
+                    <Skeleton className="h-4 md:w-[350px]" />
+                    <Skeleton className="h-4 md:w-[200px]" />
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="cursor-pointer w-full">
+                  <Skeleton className="h-[200px] md:w-[350px] rounded-xl" />
+                  <div className="pt-7 flex justify-center w-full">
+                    <Skeleton className="h-4 w-[70px]" />
+                  </div>
+                </CardContent>
 
-              <CardFooter className="flex justify-between w-full">
-                <div className="flex justify-center w-full">
-                  <Skeleton className="h-4 w-[30px]" />
-                </div>
-              </CardFooter>
-            </Card>
+                <CardFooter className="flex justify-between w-full">
+                  <div className="flex justify-center w-full">
+                    <Skeleton className="h-4 w-[30px]" />
+                  </div>
+                </CardFooter>
+              </Card>
             </div>
           ) : (
             data &&

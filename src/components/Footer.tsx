@@ -9,7 +9,7 @@ const Footer = () => {
   const layout = useLayoutStore((state: any) => state.layout);
   return (
     <footer
-      className={`homeLayout flex items-center justify-between flex-col-reverse sm:flex-row py-10 ${
+      className={`homeLayout flex items-center justify-between flex-col-reverse lg:flex-row py-10 ${
         layout.isFooterHidden ? "hidden" : ""
       }`}
     >
@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
       </Link>
       <div className="flex gap-5 justify-center items-center flex-col sm:flex-row">
-        <div className="flex justify-between w-full gap-1 sm:gap-5 sm:justify-between items-center flex-col sm:flex-row">
+        <div className="flex justify-between w-full gap-1 sm:gap-2 sm:justify-between items-center flex-col sm:flex-row">
           <Link href="/about" className="w-full flex justify-center items-center">
             <Button variant="ghost">About</Button>
           </Link>

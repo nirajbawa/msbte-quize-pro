@@ -24,7 +24,7 @@ const TermOfUse = () => {
           content1={`Welcome to MSBTE Quiz Pro, accessible via msbtequizpro.msbtewallah.in. This website is owned and operated by MSBTE Quiz Pro ("Company," "we," "our," or "us"). By accessing or using the Site, you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, please do not use the Site.`}
           content2=""
           height="h-[15rem] sm:h-auto"
-          settings={{ 
+          settings={{
             flex: "flex-row",
             animation: TermOfUseAnimation,
             bgColor: "bg-gray-100",
