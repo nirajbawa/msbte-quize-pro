@@ -23,6 +23,9 @@ const useMcqEditStore = create((set, get) => ({
       set({ mcqEditForm: d.data.savedQuestions });
     } catch {}
   },
+  setStoreState:()=>{
+    set({ mcqEditForm: []})
+  }
 }));
 
 export default useMcqEditStore;

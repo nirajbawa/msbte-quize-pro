@@ -34,6 +34,7 @@ import { Textarea } from "@/components/ui/textarea";
 function Edit() {
   const searchParams = useSearchParams();
   const mcqEditStore = useMcqEditStore((state: any) => state.mcqEditForm);
+  const setStoreState = useMcqEditStore((state: any) => state.setStoreState);
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState<boolean>();
 
@@ -127,6 +128,10 @@ function Edit() {
       loadData(id);
     }
   }, [searchParams, loadData]);
+
+  useEffect(()=>{
+    setStoreState();
+  }, [])
 
   useEffect(() => {
     reset({ questions: mcqEditStore });

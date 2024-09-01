@@ -43,7 +43,6 @@ function EditTest() {
       const id = searchParams.get("id");
       return await getTest(id);
     },
-    staleTime: 10000,
   });
 
   const createTestForm = useForm<z.infer<typeof testEditSchema>>({
