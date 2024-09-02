@@ -22,6 +22,7 @@ function Tests() {
     useInfiniteQuery({
       queryKey: ["Tests"],
       queryFn: getUserTests,
+      
       initialPageParam: 1,
       getNextPageParam: (page) => {
         console.log(page.data.totalPages);

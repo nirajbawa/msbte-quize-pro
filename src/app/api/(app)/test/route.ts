@@ -24,6 +24,7 @@ export async function GET(req: NextRequest) {
           updatedAt: 1,
         }
       )
+        .sort({ updatedAt: 1 })
         .skip(skip)
         .limit(limit);
       const totalRecords = await TestModel.countDocuments({ publish: true });
