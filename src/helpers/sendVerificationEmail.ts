@@ -9,8 +9,9 @@ export async function sendVerificationEmail(
   verifyCode: string
 ): Promise<ApiResponse> {
   try {
+    
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "onboarding@msbtewallah.in",
       to: email,
       subject: "MSBTE Quiz Pro Verification Code",
       react: VerificationEmail({ username, otp: verifyCode }),
@@ -28,8 +29,9 @@ export async function sendResetPasswordVerificationEmail(
   verifyCode: string
 ): Promise<ApiResponse> {
   try {
+    console.log("email sended")
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "reset-password@msbtewallah.in",
       to: email,
       subject: "MSBTE Quiz Pro Verification Code",
       react: resetPasswordVerificationEmail({ username, otp: verifyCode }),

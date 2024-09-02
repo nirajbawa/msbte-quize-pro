@@ -10,7 +10,7 @@ export async function sendContactUsEmail(
 ): Promise<ApiResponse> {
   try {
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "contact-us@msbtewallah.in",
       to: process.env.CONTACT_US_EMAIL || "",
       subject: "MSBTE Quiz - Contact Us Email",
       react: contactEmail({ email, fullName, subject, message }),
