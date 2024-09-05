@@ -75,12 +75,12 @@ function Order() {
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Sn.No.</TableHead>
+            <TableHead>ID</TableHead>
             <TableHead>Username</TableHead>
             <TableHead>Email</TableHead>
             <TableHead>Verified</TableHead>
             <TableHead>Role</TableHead>
-            <TableHead>User Email</TableHead>
-            <TableHead className="text-right">Created At</TableHead>
+            <TableHead className="text-center">Created At</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -93,7 +93,7 @@ function Order() {
                 <TableCell>{item._id}</TableCell>
                 <TableCell>{item.username}</TableCell>
                 <TableCell>{item.email}</TableCell>
-                <TableCell>{item.isVerified}</TableCell>
+                <TableCell>{item?.isVerified?.toString()}</TableCell>
                 <TableCell>{item.role}</TableCell>
                 <TableCell className="text-center">{item?.createdAt}</TableCell>
               </TableRow>

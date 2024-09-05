@@ -7,7 +7,7 @@ import { NextRequest } from "next/server";
 export async function GET(req: NextRequest) {
   await dbConnect();
   try {
-    const totalUsers = await UserModel.countDocuments({});
+    const totalUsers = await UserModel.countDocuments();
     const totalNoOfCourses = await TestModel.countDocuments({ publish: true });
     const totalNoOfOrders = await OrderModel.countDocuments({
       status: "captured",
@@ -18,9 +18,9 @@ export async function GET(req: NextRequest) {
         success: true,
         message: "Statistics fetched successfully.",
         data: {
-          totalUsers,
-          totalNoOfCourses,
-          totalNoOfOrders,
+          totalUsers:totalUsers,
+          totalNoOfCourses:totalNoOfCourses,
+          totalNoOfOrders:totalNoOfOrders,
         },
       },
       { status: 200 }
