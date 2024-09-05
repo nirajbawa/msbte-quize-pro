@@ -7,7 +7,7 @@ import { NextRequest } from "next/server";
 export async function GET(req: NextRequest) {
   await dbConnect();
   try {
-    const totalUsers = await UserModel.countDocuments();
+    const totalUsers = await UserModel.countDocuments({isVerified:true});
     const totalNoOfCourses = await TestModel.countDocuments({ publish: true });
     const totalNoOfOrders = await OrderModel.countDocuments({
       status: "captured",
