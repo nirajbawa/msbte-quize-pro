@@ -57,7 +57,6 @@ export async function POST(req: NextRequest) {
       }
     }
   } catch (error) {
-    console.log("error in verify email : ", error);
     return Response.json(
       {
         success: false,

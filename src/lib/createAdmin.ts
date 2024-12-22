@@ -19,9 +19,6 @@ export async function createAdmin() {
     });
 
     await newUser.save();
-    console.log("new user created");
-  } else {
-    console.log("user already exists");
   }
 }
 

@@ -10,7 +10,6 @@ export async function GET(req: NextRequest) {
       req,
       secret: process.env.NEXT_AUTH_SECRET,
     });
-    console.log(token?.email);
     const data = await OrderModel.find({
       userEmail: token?.email,
     }).populate("testId", {
@@ -38,7 +37,7 @@ export async function GET(req: NextRequest) {
       );
     }
   } catch (error) {
-    console.log(error);
+    
     return Response.json(
       {
         success: false,

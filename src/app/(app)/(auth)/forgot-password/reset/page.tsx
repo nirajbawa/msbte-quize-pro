@@ -54,7 +54,7 @@ const ForgotPassword = () => {
       return await resetPassword(email);
     },
     onSuccess: (data) => {
-      console.log(data);
+      
       toast({
         title: "Success",
         description: data.message,
@@ -64,7 +64,7 @@ const ForgotPassword = () => {
       setIsSubmitting(false);
     },
     onError: (error) => {
-      console.log("myerror", error);
+      
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
         title: "Failed",

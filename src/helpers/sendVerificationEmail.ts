@@ -29,7 +29,6 @@ export async function sendResetPasswordVerificationEmail(
   verifyCode: string
 ): Promise<ApiResponse> {
   try {
-    console.log("email sended")
     await resend.emails.send({
       from: "reset-password@msbtewallah.in",
       to: email,

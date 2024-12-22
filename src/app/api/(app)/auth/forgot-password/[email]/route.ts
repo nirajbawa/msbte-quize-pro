@@ -10,7 +10,6 @@ export async function GET(
   await dbConnect();
   try {
     const email = params.email;
-    console.log(email);
     const existingVerifiedEmail = await UserModel.findOne({
       email,
       isVerified: true,
@@ -64,7 +63,6 @@ export async function GET(
       );
     }
   } catch (error) {
-    console.log("error in forgot password : ", error);
     return Response.json(
       {
         success: false,

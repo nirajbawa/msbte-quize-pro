@@ -50,7 +50,6 @@ export async function POST(req: NextRequest) {
       }
     }
   } catch (error) {
-    console.log("Error in reset password : ", error);
     return Response.json(
       {
         success: false,

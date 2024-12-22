@@ -52,7 +52,7 @@ export async function GET(
       return NextResponse.json({ message: true, data: order });
     }
   } catch (error) {
-    console.log(error);
+    
     return Response.json(
       {
         success: false,

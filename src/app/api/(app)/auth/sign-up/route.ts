@@ -62,7 +62,6 @@ export async function POST(request: Request) {
       verifyCode
     );
     if (!emailResponse.success) {
-      console.log(emailResponse.message)
       return Response.json(
         {
           success: false,

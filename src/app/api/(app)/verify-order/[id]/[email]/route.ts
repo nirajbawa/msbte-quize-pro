@@ -9,7 +9,6 @@ export async function GET(
   await dbConnect();
   try {
     const testId = params.id;
-    console.log(params.email);
     const data = await OrderModel.findOne({
       testId: testId,
       userEmail: params.email,
@@ -33,7 +32,7 @@ export async function GET(
       );
     }
   } catch (error) {
-    console.log(error);
+    
     return Response.json(
       {
         success: false,

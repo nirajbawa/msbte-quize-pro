@@ -50,7 +50,7 @@ export async function GET(
       }
     }
   } catch (error) {
-    console.log(error);
+    
     return Response.json(
       {
         success: false,

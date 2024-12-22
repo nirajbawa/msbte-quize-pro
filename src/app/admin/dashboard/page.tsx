@@ -29,7 +29,7 @@ const Hone = () => {
       };
       setData(temp);
     } catch (error) {
-      console.log(error);
+      
     }
   };
 

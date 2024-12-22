@@ -44,7 +44,7 @@ export async function POST(
       { status: 200 }
     );
   } catch (error) {
-    console.log("error ", error);
+    
     return Response.json(
       {
         success: false,
@@ -65,7 +65,6 @@ export async function PATCH(
     const testId = params.id;
 
     const isQuestionsAlreadyExists = await QuestionModel.findOne({ testId });
-    console.log(isQuestionsAlreadyExists);
 
     if (!isQuestionsAlreadyExists) {
       const objId = new mongoose.Types.ObjectId(testId);
@@ -93,7 +92,7 @@ export async function PATCH(
       { status: 200 }
     );
   } catch (error) {
-    console.log("error ", error);
+    
     return Response.json(
       {
         success: false,
@@ -123,7 +122,7 @@ export async function GET(
       { status: 200 }
     );
   } catch (error) {
-    console.log("error ", error);
+    
     return Response.json(
       {
         success: false,

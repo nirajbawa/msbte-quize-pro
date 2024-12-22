@@ -216,12 +216,12 @@ function Submit() {
           ""
         )}
       </div>
-      <div className="w-full flex flex-col gap-10">
+      <div className="w-full flex flex-col gap-10 overflow-auto">
         {questions.map((item: any, index: number) => {
           return (
             <div
               key={index}
-              className="w-full min-h-52 h-full bg-slate-100 rounded-xl p-10 flex flex-col gap-y-8"
+              className="w-full min-h-52 h-full bg-slate-100 rounded-xl p-10 flex flex-col gap-y-8 overflow-auto "
             >
               <p className="font-bold">Question {index + 1} : </p>
               <p>{item.question}</p>

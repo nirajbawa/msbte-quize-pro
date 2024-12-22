@@ -45,7 +45,6 @@ const useCartStore = create(
       },
       removeItemFromCart: async (id: string) => {
         const filteredData = get().cart.filter((item: any) => item._id !== id);
-        console.log("r filtered Data : ", filteredData);
         set({ cart: filteredData });
         try {
           await removeItemFromCart({ testId: id });
@@ -54,7 +53,6 @@ const useCartStore = create(
       loadCartItems: async () => {
         try {
           const localData = get().cart;
-          console.log(localData);
           const serverData = (await getCartItems()).data;
 
           const setLocalData = new Set(localData.map((item: any) => item._id));
@@ -62,15 +60,10 @@ const useCartStore = create(
             serverData.map((item: any) => item.testId._id)
           );
 
-          console.log("set local : ", setLocalData);
-          console.log("set server : ", setServerData);
-
           let dataNotAvailableOnServer = difference(
             setLocalData,
             setServerData
           );
-
-          console.log(dataNotAvailableOnServer);
 
           if (dataNotAvailableOnServer.size > 0) {
             let requests: Promise<any>[] = [];
@@ -91,7 +84,6 @@ const useCartStore = create(
                 set({ cart: filteredData });
               })
               .catch((error) => {
-                console.log("data synced error");
               });
           } else {
             const data: cart[] = serverData.map((item: any) => ({
@@ -101,11 +93,10 @@ const useCartStore = create(
               banner: item.testId.banner,
               updatedAt: item.testId.updatedAt,
             }));
-            console.log("data else : ", data);
             set({ cart: data });
           }
         } catch (error) {
-          console.log(error);
+          
         }
       },
     }),

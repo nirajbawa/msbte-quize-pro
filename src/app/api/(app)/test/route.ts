@@ -85,7 +85,7 @@ export async function GET(req: NextRequest) {
       );
     }
   } catch (error) {
-    console.log(error);
+    
     return Response.json(
       {
         success: false,

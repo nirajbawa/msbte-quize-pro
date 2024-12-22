@@ -25,7 +25,6 @@ function Tests() {
       
       initialPageParam: 1,
       getNextPageParam: (page) => {
-        console.log(page.data.totalPages);
         if (page.data.totalPages === page.data.currentPage) {
           return undefined;
         }

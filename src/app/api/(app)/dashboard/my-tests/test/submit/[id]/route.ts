@@ -28,7 +28,6 @@ export async function POST(
         { status: 404 }
       );
     } else {
-      console.log(testQuestions.publicQuestions);
       const solvedQuestions = testQuestions.publicQuestions.map(
         (item: mcqQuestion, index: number) => {
           if (item.answer == answers[index].answer) {
@@ -68,7 +67,7 @@ export async function POST(
       );
     }
   } catch (error) {
-    console.log(error);
+    
     return Response.json(
       {
         success: false,

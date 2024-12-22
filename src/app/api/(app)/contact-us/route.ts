@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    console.log(error);
+    
     return Response.json(
       {
         success: false,

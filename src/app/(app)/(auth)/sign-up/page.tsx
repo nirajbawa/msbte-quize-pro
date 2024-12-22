@@ -39,7 +39,7 @@ const SignUpForm = () => {
       return await signUpRequest(data);
     },
     onSuccess: (data) => {
-      console.log(data);
+      
       toast({
         title: "Success",
         description: data.message,
@@ -49,7 +49,7 @@ const SignUpForm = () => {
       setIsSubmitting(false);
     },
     onError: (error) => {
-      console.log("myerror", error);
+      
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
         title: "Sign Up Failed",

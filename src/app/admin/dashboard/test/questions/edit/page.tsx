@@ -73,7 +73,7 @@ function Edit() {
       setIsSubmitting(false);
     },
     onError: (error) => {
-      console.log("myerror", error);
+      
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
         title: "Sign Up Failed",

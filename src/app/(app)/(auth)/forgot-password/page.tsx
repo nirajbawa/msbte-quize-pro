@@ -51,7 +51,7 @@ const ForgotPassword = () => {
       return await forgotPassword(email);
     },
     onSuccess: (data) => {
-      console.log(data);
+      
       toast({
         title: "Success",
         description: data.message,

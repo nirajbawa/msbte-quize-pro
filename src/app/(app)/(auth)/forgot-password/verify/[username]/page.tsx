@@ -37,7 +37,7 @@ const VerifyForm = () => {
       return await verifyForgetPasswordEmail(data);
     },
     onSuccess: (data) => {
-      console.log(data);
+      
       queryClient.invalidateQueries({ queryKey: ["signUp"] });
       toast({
         title: "Success",
@@ -49,7 +49,7 @@ const VerifyForm = () => {
       setIsSubmitting(false);
     },
     onError: (error) => {
-      console.log("myerror", error);
+      
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
         title: "Failed",
@@ -68,15 +68,11 @@ const VerifyForm = () => {
   };
 
   function onSubmit() {
-    console.log({
-      email: decodeURIComponent(params.username),
-      code,
-    });
     const response = verifySchema.safeParse({
       email: decodeURIComponent(params.username),
       code: code,
     });
-    console.log(response);
+    
     if (response.success) {
       mutation.mutate(response.data);
       setIsSubmitting(true);
