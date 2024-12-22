@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { getUserTest } from "@/api-requests/TestRequests";
 import { Skeleton } from "@/components/ui/skeleton";
-import { createOrder, freeTest, verifyOrder } from "@/api-requests/BuyRequest";
+import { createOrder, freeTest } from "@/api-requests/BuyRequest";
 import useRazorpay from "react-razorpay";
 import { RazorpayOptions } from "react-razorpay";
 import { useToast } from "@/components/ui/use-toast";
@@ -38,7 +38,6 @@ function Checkout() {
       return await freeTest(id);
     },
     onSuccess: (data) => {
-      console.log(data);
       toast({
         title: "Success",
         description: data.message,
@@ -70,20 +69,13 @@ function Checkout() {
       amount: order.amount,
       order_id: order.id,
       handler: async function (response: any) {
-        console.log(response);
-
-        const data = await verifyOrder({
-          razorpay_payment_id: response.razorpay_payment_id,
-          razorpay_order_id: response.razorpay_order_id,
-          razorpay_signature: response.razorpay_signature,
-        });
-
-        const res = data;
-
-        if (res?.success == true) {
-          removeItemFromCart(searchParams.get("id"));
           router.replace("/dashboard/my-tests");
-        }
+          try{
+            removeItemFromCart(searchParams.get("id"));
+          }
+          catch(error)
+          {
+          }
       },
       modal: {
         ondismiss: function () {

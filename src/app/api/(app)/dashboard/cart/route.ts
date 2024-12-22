@@ -103,7 +103,6 @@ export async function PUT(req: NextRequest) {
       throw Error("item not exists in cart");
     }
   } catch (error) {
-    console.log(error);
     return Response.json(
       {
         success: false,

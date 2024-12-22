@@ -6,21 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import dayjs from "dayjs";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import useCartStore from "@/store/useCartStore";
-import { useToast } from "@/components/ui/use-toast";
-import { ToastAction } from "@radix-ui/react-toast";
-import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
 interface TestCardProps {
@@ -33,18 +22,15 @@ interface TestCardProps {
 }
 
 const MyTestCard = ({ title, img, btnUrl, price, date, id }: TestCardProps) => {
-  const { toast } = useToast();
-  const router = useRouter();
   const [loader, setLoader] = useState<boolean>(false);
 
-  const addNewItemToCart = useCartStore((state: any) => state.addNewToCartItem);
   return (
     <div className="w-72 md:w-80">
       <Card>
         <CardHeader>
           <CardTitle
             className={`${
-              title.length > 20 ? "mb-0" : "mb-6"
+              title?.length > 20 ? "mb-0" : "mb-6"
             } leading-4 text-lg`}
           >
             {title}

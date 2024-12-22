@@ -13,25 +13,24 @@ const instance = new Razorpay({
 
 export async function POST(req: NextRequest) {
   try {
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
-      await req.json();
-    const body = razorpay_order_id + "|" + razorpay_payment_id;
+    const body = await req.json();
+    
+    const razorpay_signature = req.headers.get("x-razorpay-signature");
 
     const expectedSignature = crypto
-      .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET || "")
-      .update(body.toString())
+      .createHmac("sha256", process.env.RAZORPAY_WEB_HOOK_KEY_SECRET || "")
+      .update(JSON.stringify(body))
       .digest("hex");
 
     const isAuthentic = expectedSignature === razorpay_signature;
-
     if (isAuthentic) {
-      const paymentDetails = await instance.payments.fetch(razorpay_payment_id);
+      const paymentDetails = await instance.payments.fetch(body.payload.payment.entity.id);
 
       const amount = (paymentDetails.amount as number) / 100;
 
       const order = new OrderModel({
-        razorpay_order_id,
-        razorpay_payment_id,
+        razorpay_order_id: paymentDetails.order_id,
+        razorpay_payment_id: paymentDetails.id,
         status: paymentDetails.status,
         method: paymentDetails.method,
         testId: paymentDetails.notes.productId,

@@ -128,12 +128,12 @@ function MyTests() {
               data?.data?.map((item: any, index: number) => (
                 <MyTestCard
                   key={index}
-                  title={item.testId.title}
-                  img={item.testId.banner}
-                  btnUrl={`/dashboard/my-tests/test?id=${item.testId._id}`}
-                  price={item.testId.price}
-                  date={item.testId.updatedAt}
-                  id={item.testId._id}
+                  title={item?.testId?.title}
+                  img={item?.testId?.banner}
+                  btnUrl={`/dashboard/my-tests/test?id=${item?.testId?._id}`}
+                  price={item?.testId?.price}
+                  date={item?.testId?.updatedAt}
+                  id={item?.testId?._id}
                 />
               ))
             )}
