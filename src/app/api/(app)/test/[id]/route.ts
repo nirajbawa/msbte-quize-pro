@@ -9,7 +9,7 @@ export async function GET(
   await dbConnect();
   try {
     const testId = params.id;
-    const data = await TestModel.findOne({ _id: testId });
+    const data = await TestModel.findOne({ _id: testId, publish: true });
 
     if (!data) {
       return Response.json(

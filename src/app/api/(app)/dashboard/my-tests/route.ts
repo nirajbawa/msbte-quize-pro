@@ -12,11 +12,11 @@ export async function GET(req: NextRequest) {
     });
     const data = await OrderModel.find({
       userEmail: token?.email,
-    }).populate("testId", {
-      publish: 0,
-      createdAt: 0,
-      questionId: 0,
-    });
+    })
+      .populate({
+        path: "testId",
+        select: "-publish -createdAt -questionId",
+      });
 
     if (data) {
       return Response.json(

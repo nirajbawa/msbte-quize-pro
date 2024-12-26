@@ -9,8 +9,8 @@ export async function GET(req: NextRequest) {
     const limit = parseInt(req.nextUrl.searchParams.get("limit") || "10", 10);
 
     const skip = (page - 1) * limit;
-    const data = await UserModel.find().skip(skip).limit(limit);
-    const totalRecords = await UserModel.countDocuments();
+    const data = await UserModel.find({isVerified:true}).skip(skip).limit(limit);
+    const totalRecords = await UserModel.countDocuments({isVerified:true});
 
     if (!data) {
       return Response.json(

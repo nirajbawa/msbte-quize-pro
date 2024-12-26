@@ -23,22 +23,40 @@ export async function GET(
           req,
           secret: process.env.NEXT_AUTH_SECRET,
         });
-        const order = new OrderModel({
-          status: "captured",
-          testId: testData._id,
+        const existingOrder = await OrderModel.findOne({
           userEmail: token?.email,
-          amount: testData.price,
-          currency: "INR",
+          testId: testData._id,
         });
-        order.save();
-
-        return Response.json(
-          {
-            success: true,
-            message: "Test added to my tests successfully.",
-          },
-          { status: 200 }
-        );
+        if(!existingOrder)
+        {
+          
+          const order = new OrderModel({
+            status: "captured",
+            testId: testData._id,
+            userEmail: token?.email,
+            amount: testData.price,
+            currency: "INR",
+          });
+          order.save();
+  
+          return Response.json(
+            {
+              success: true,
+              message: "Test added to my tests successfully.",
+            },
+            { status: 200 }
+          );
+        }
+        else{
+          return Response.json(
+            {
+              success: false,
+              message: "Something went wrong.",
+            },
+            { status: 500 }
+          );
+        }
+       
       } else {
         return Response.json(
           {
